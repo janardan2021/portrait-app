@@ -262,7 +262,9 @@ app.post('/login', storeReturnTo, validateUser, passport.authenticate(['admin', 
   });
 }); 
 
-
+app.get('/*', (req,res) => {
+  res.render('templates/home');
+})
 
 // ---------Throw AppError for all unvalid routes---------
 // app.get('/*', async (req, res, next) => {
