@@ -1,0 +1,68 @@
+<% layout('layouts/boilerplate') %> 
+
+
+<link rel="stylesheet" href="/css/form.css">
+
+<div class="container  pt-3 pb-5 mb-5 mt-0">
+    <div class="row justify-content-center pt-1 pb-1 ">
+        <div class="col-10 text-center">
+            <h1>Contact me</h1>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-10 text-center message">
+            <p>Do you have any questions? Please do not hesitate to contact us directly.
+                 Our team will come back to you within a matter of hours to help you.</p>
+        </div>
+    </div>
+<!-- col-lg-4 col-sm-6 -->
+    <div class="row  justify-content-center pt-3 pb-3 ">
+        
+        <div class="col-md-5 text-center border p-5 info ">
+            <h5>Contact info</h5>
+          <ul class="list-unstyled pt-2">
+            <li><p ><i class="fa fa-home me-3"></i>Shoreline Washington</p></li>
+            <li><p ><i class="fa fa-phone me-3"></i>+1 234 5678</p></li>
+            <li><a href="#"><i class="fa fa-envelope me-3"></i>some@email.com</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-7 border p-3 form">
+            <form action="/contact" method="POST" class="validated-form" novalidate>
+                <div class="mb-3">
+                    <label class="form-label" for="name">Full name</label>
+                    <input class="form-control" type="text" id="name" name="name" placeholder="First and last name" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            
+                <div class="mb-3">
+                    <label class="form-label" for="email">Email</label>
+                    <input class="form-control" type="email" id="email" name="email" placeholder="Email Address" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                 
+                <div class="mb-3">
+                    <label class="form-label" for="subject">Subject</label>
+                    <textarea class="form-control"  name="subject" id="subject" cols="20" rows="4" placeholder="Your message here" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <button class="btn btn-success">Send message</button>
+            </form>
+        </div>
+    </div>
+
+  <div class="row justify-content-center pt-3 pb-3">
+    <div class="col text-center">
+      <a href="/"><button class="btn btn-success">Back to home</button></a>
+    </div>
+  </div>
+
+  </div>

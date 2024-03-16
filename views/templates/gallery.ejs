@@ -1,0 +1,55 @@
+<% layout('layouts/boilerplate') %> 
+
+<div class="container gallery_html pt-3 pb-5 mb-0 mt-0">
+    <div class="row justify-content-center pt-1 pb-1">
+        <div class="col text-center">
+            <h1>All Portraits</h1>
+            <p>Here you can explore all the portraits made by me. </p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center pt-1 pb-2 vh-50">
+      <% for (let img of portraits)  {%>
+      <div class="col-md-6 col-lg-4 col-xl-3 text-center pt-3 pb-3 " style="background-color: #03262c;">
+
+        <img src="<%= img.url %>" class="img-fluid h-100 " alt="..." data-bs-toggle="modal" data-bs-target="#<%= img.url %>">
+      
+  
+  <!-- Modal -->
+  <div class="modal modal-lg fade " id="<%= img.url %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal_class">
+      <div class="modal-content p-1" style="background-color: #6dea19;">
+        <!-- <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div> -->
+        <div class="modal-body m-0 p-0" >
+          <img src="<%= img.url %>" class="img-fluid" style="width: 100%;" alt="...">
+          <button type="button" class="btn-close btn-outline-success" data-bs-dismiss="modal" aria-label="Close" style="position: absolute; top: 2%; left: 95%;" ></button>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <!-- Modal End -->
+  </div>
+      <% } %>
+
+   <div class="row justify-content-center pt-3 pb-3">
+        <div class="col text-center">
+            <p>More portraits will be added soon.....</p>
+        </div>
+    </div>
+
+  </div>
+
+  <div class="row justify-content-center pt-3 pb-3">
+    <div class="col text-center">
+      <a href="/"><button class="btn btn-success">Back to home</button></a>
+    </div>
+  </div>
+
+  </div>

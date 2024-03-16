@@ -1,0 +1,34 @@
+<% layout('layouts/boilerplate')%>
+
+<link rel="stylesheet" href="/css/form.css">
+
+<div class="container pt-3 pb-5 mb-0 mt-0">
+    <div class="row justify-content-center pt-3 pb-3 ">
+        <div class="col-6 form mt-3">
+            <h1>Login</h1>
+            <form action="/login" method="POST" class="validated-form" novalidate>
+                <div class="mb-3">
+                    <label class="form-label" for="username">Username</label>
+                    <input class="form-control" type="text" id="username" name="username" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="password">Password</label>
+                    <input class="form-control" type="password" id="password" name="password" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <button class="btn mb-3 btn-success">Login</button>
+                <span style="position: relative; left:2px; color:white;" 
+                                class="d-inline-block" tabindex="0" data-bs-toggle="popover" 
+                                data-bs-trigger="hover focus" data-bs-content="Use the login details that was provided to you with your portrait.">
+                            <i class="fa-solid fa-circle-info"></i>
+                </span>
+            </form>
+        </div>
+    </div>
+</div>

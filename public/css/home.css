@@ -1,0 +1,66 @@
+body {
+    background-color:rgb(246, 248, 230);
+}
+
+
+.banner_section {
+    background: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 90vh;
+}
+/* .carousel-inner {
+    box-sizing: border-box;
+    border: solid #7fa121 5px;
+    border-radius: 25% 10%;
+    box-shadow: 10px 5px 5px black;
+    height: 45vh;
+} */
+
+.banner-content-1 {
+    margin-top: 5rem;
+    padding: 2rem;
+}
+
+/* About section */
+/* .about_section {
+    background: url("../images/about/about-banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 9rem 0;
+} */
+
+.profile_review {
+    background-color: #6ac643;
+}
+
+.footer_section {
+    background-color: #03262c;
+}
+.footer_section .row .col-3 li a{
+    background-color: #03262c;
+    color: white;
+    text-decoration: none;
+}
+.footer_section .row .col-3 h5 {
+    color: white;
+}
+.footer_section .row .col-3 p {
+    color: white;
+}
+
+.modal_body {
+    box-sizing: border-box;
+    border: solid #6dea19 5px;
+}
+
+.container .row .col-3 > img {
+    height: 20rem;
+}
+
+
+.valid-feedback {
+    color: #79f625;
+}

@@ -1,0 +1,116 @@
+<% layout('layouts/boilerplate') %> 
+
+<link rel="stylesheet"  href="/css/stars.css"/>
+<link rel="stylesheet" href="/css/review.css">
+<link rel="stylesheet" href="/css/form.css">
+
+<div class="container reviews_html pt-3 pb-5 mb-0 mt-0">
+    <div class="row justify-content-center pt-3 pb-3  ">
+       <div class="col-6 text-center">
+           <h1>Reviews from Portrait lovers</h1>
+       </div>
+    </div>
+   <div class="row justify-content-center pt-3 mb-3 ">
+    <!-- col-lg-4 col-sm-6 -->
+    <% if (!activeUser) {%>
+      <div class="col-lg-5 col-md-10 form pt-3 mb-3" style="height: 25rem;">
+       <div class="text-center mb-5">
+         <h4>Post your review</h4>
+       </div>
+       <form action="/reviews/login" method="POST" class="validated-form" novalidate>
+         <div class="mb-3">
+             <label class="form-label" for="username">
+              Username
+            </label>
+             
+             <input class="form-control" type="text" id="username" name="username" required>
+             <div class="valid-feedback">
+                 Looks good!
+             </div>
+         </div>
+     
+         <div class="mb-3">
+             <label class="form-label" for="password">Password</label>
+             <input class="form-control" type="password" id="password" name="password" required>
+             <div class="valid-feedback">
+                 Looks good!
+             </div>
+         </div>
+         <button class="btn btn-success">Login</button>
+         <span style="position: relative; top:20px; left:2px; color:white;" 
+                    class="d-inline-block" tabindex="0" data-bs-toggle="popover" 
+                    data-bs-trigger="hover focus" data-bs-content="Use the login details that was provided to you with your portrait.">
+                <i class="fa-solid fa-circle-info"></i>
+          </span>
+     </form>
+      </div>
+       <% } else if (activeUser && !isAdmin) { %>
+         <div class="col-lg-5 col-md-10 form pt-3 mb-3" style="height: 25rem;">
+           <form action="/reviews/comment" method="POST" class="validated-form" novalidate>
+               <div class="mb-3">
+               <fieldset class="starability-basic">
+                   <legend>Your rating:</legend>
+                   <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked aria-label="No rating." />
+                   <input type="radio" id="first-rate1" name="rating" value="1" />
+                   <label for="first-rate1" title="Terrible">1 star</label>
+                   <input type="radio" id="first-rate2" name="rating" value="2" />
+                   <label for="first-rate2" title="Not good">2 stars</label>
+                   <input type="radio" id="first-rate3" name="rating" value="3" />
+                   <label for="first-rate3" title="Average">3 stars</label>
+                   <input type="radio" id="first-rate4" name="rating" value="4" />
+                   <label for="first-rate4" title="Very good">4 stars</label>
+                   <input type="radio" id="first-rate5" name="rating" value="5" />
+                   <label for="first-rate5" title="Amazing">5 stars</label>
+                 </fieldset>
+               </div>
+           
+               <div class="mb-3">
+                   <label class="form-label" for="comment">Leave your review below</label>
+                   <textarea class="form-control"  name="comment" id="comment" cols="20" rows="5" required></textarea>
+                   <!-- <input class="form-control" type="text" id="comment" name="comment" required> -->
+                   <div class="valid-feedback">
+                       Looks good!
+                   </div>
+               </div>
+               
+               <button class="btn btn-success">Submit</button>
+               
+           </form>
+           
+           <a href="/logout"><button class="btn btn-success">Logout</button></a>
+           
+       </div>
+         <% } %>
+       <div class="col-lg-7 col-md-10 px-0">
+           <div class="accordion" id="accordionPanelsStayOpenExample">
+            <% for (let review of reviews) { %>
+               <div class="accordion-item">
+                 <h2 class="accordion-header" >
+                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#<%= review.username%>" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    <strong><h4><%= review.username%></h4></strong> &nbsp;&nbsp;&nbsp;<p class="starability-result" data-rating="<%= review.rating %>"></p>
+                   </button>
+                 </h2>
+                 <div id="<%= review.username%>" class="accordion-collapse collapse show">
+                   <div class="accordion-body">
+                     <%= review.comment %>
+                   </div>
+                 </div>
+               </div>
+            <% } %>
+
+            </div>
+       </div>
+       
+     
+   </div>
+
+   <div class="row justify-content-center pt-3 pb-3">
+    <div class="col text-center">
+      <a href="/"><button class="btn btn-success">Back to home</button></a>
+    </div>
+  </div>
+
+ 
+  
+</div>
+

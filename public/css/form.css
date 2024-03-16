@@ -1,0 +1,15 @@
+.form, .info{
+    background-color:#03262c;
+}
+.form-label {
+    color: white;
+}
+
+.form, .info a , p ,h4, h5{
+    text-decoration: none;
+    color: white;
+}
+
+.message p {
+    color: black;
+}
